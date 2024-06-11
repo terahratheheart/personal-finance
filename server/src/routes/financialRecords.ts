@@ -34,13 +34,11 @@ router.put("/:id", async (req: Request, res: Response) => {
    
        const id = req.params.id
        const newRecordBody = req.body
-       console.log(id, newRecordBody)
        const record = await FinancialRecordModel.findByIdAndUpdate(
         id,
         newRecordBody,
         { new: true}
        )
-       console.log('recrd', record)
        if(!record) return res.status(404).send()
 
         res.status(200).send(record)
