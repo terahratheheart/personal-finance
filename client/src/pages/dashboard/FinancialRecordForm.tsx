@@ -26,7 +26,6 @@ export const FinancialRecordForm = () => {
             paymentMethod
     
         }
-        console.log('newRecors in form', newRecord)
         await addRecord(newRecord)
         setDescription('')
         setAmount('')
